@@ -1,0 +1,38 @@
+{"intents": [
+	{
+		"tag": "greeting",
+		"patterns": ["hi", "hello", "hey"],
+		"responses": ["hi", "hello", "hey"],
+		"context_set": ""
+	},
+	{
+		"tag": "creator",
+		"patterns": ["who made you?", "who created you?"],
+		"responses": ["i was created by gage."],
+		"context_set": ""
+	},
+	{
+		"tag": "confirm",
+		"patterns": ["yes", "yep", "absolutely","yea","yeah","affirmative"],
+		"responses": ["ok"],
+		"context_set": ""
+	},
+	{
+		"tag": "deny",
+		"patterns": ["no", "nope", "negative","negatory"],
+		"responses": ["ok"],
+		"context_set": ""
+	},
+	{
+		"tag": "cancel",
+		"patterns": ["never mind.", "forget it.", "forget about it."],
+		"responses": ["ok"],
+		"context_set": ""
+	},
+	{
+		"tag": "add",
+		"patterns": ["add","add a new action","add an action"],
+		"responses": ["$action:add_new_action.py"],
+		"context_set": ""
+	}
+]}
