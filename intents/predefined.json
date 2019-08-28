@@ -8,7 +8,7 @@
 	{
 		"tag": "creator",
 		"patterns": ["who made you?", "who created you?"],
-		"responses": ["i was created by gage."],
+		"responses": ["i was created by the-py-guy."],
 		"context_set": ""
 	},
 	{

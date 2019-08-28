@@ -112,10 +112,9 @@ def neural_net(Train):
 	if Train:
 		model.fit(training_data, output_data, n_epoch=5000, batch_size=8, show_metric=True)
 		model.save(working_dir+model_save_name)
-		print('Model has been trained, program will now exit...')
-		exit()
-	else:
-		model.load(working_dir+model_save_name)
+		print('Model has been trained...')
+
+	model.load(working_dir+model_save_name)
 
 
 

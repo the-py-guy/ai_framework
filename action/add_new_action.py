@@ -8,6 +8,7 @@ def create_action(trigger):
 		data['intents'].append({'tag':f_name,'patterns':[trigger],'responses':['$action:'+f_name+'.py'],'context_set':""})
 		json.dump(data, f)
 	with open('action/'+f_name+'.py','a') as f:
+		f.write('# saying: "'+trigger+'" will execute this script.\n')
 		template = open('action/templates/action_template.py','r')
 		for line in template.readlines():
 			f.write(line)
