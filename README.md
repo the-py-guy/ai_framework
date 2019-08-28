@@ -21,3 +21,10 @@ since this is AI, your words do not need to be exact for any of the following co
   - **fuction ai_predict():** takes a string of user input and returns a python dictionary containing the following:
     * **"trigger_phrase":** the userinput passed to the ai in which it made its prediction of what the appropriate response should be.
     * **"prediction_data":** contains possible responses to users input, the ai's percentage of certainty that it predicted the response correctly, the context which may come in a future version, and the patterns of speech that the ai was trained to recognize for this particular prediction.
+
+  - **function confirm_deny_cancel():** takes a string of user input and detects if the user has said something similar to yes, no, or cancel.
+  * **yes:** returns "confirm"
+  * **no:** returns "deny"
+  * **cancel:** exits the action script and returns to the main loop.
+
+
