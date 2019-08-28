@@ -19,5 +19,5 @@ since this is AI, your words do not need to be exact for any of the following co
 
 * **action scripts**
   - **fuction ai_predict():** takes a string of user input and returns a python dictionary containing the following:
-    1. "trigger_phrase": the userinput passed to the ai in which it made its prediction of what the appropriate response should be.
-    1. "prediction_data": contains possible responses to users input, the ai's percentage of certainty that it predicted the response correctly, the context which may come in a future version, and the patterns of speech that the ai was trained to recognize for this particular prediction.
+    1. **"trigger_phrase":** the userinput passed to the ai in which it made its prediction of what the appropriate response should be.
+    2. **"prediction_data":** contains possible responses to users input, the ai's percentage of certainty that it predicted the response correctly, the context which may come in a future version, and the patterns of speech that the ai was trained to recognize for this particular prediction.
