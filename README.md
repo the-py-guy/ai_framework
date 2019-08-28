@@ -26,5 +26,6 @@ since this is AI, your words do not need to be exact for any of the following co
     * **yes:** returns "confirm"
     * **no:** returns "deny"
     * **cancel:** exits the action script and returns to the main loop.
+    * **none of the above:** returns None.
 
-
+  - **function main():** is the entry point of an action script. this is where you can program the script to do the desired action.
