@@ -23,8 +23,8 @@ since this is AI, your words do not need to be exact for any of the following co
     * **"prediction_data":** contains possible responses to users input, the ai's percentage of certainty that it predicted the response correctly, the context which may come in a future version, and the patterns of speech that the ai was trained to recognize for this particular prediction.
 
   - **function confirm_deny_cancel():** takes a string of user input and detects if the user has said something similar to yes, no, or cancel.
-  * **yes:** returns "confirm"
-  * **no:** returns "deny"
-  * **cancel:** exits the action script and returns to the main loop.
+    * **yes:** returns "confirm"
+    * **no:** returns "deny"
+    * **cancel:** exits the action script and returns to the main loop.
 
 
