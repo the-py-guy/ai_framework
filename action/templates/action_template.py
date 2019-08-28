@@ -1,5 +1,13 @@
 import argparse, base64, json, asyncio, websockets
 
+def confirm_deny_cancel(inp):
+	prediction = ai_predict(inp)['prediction_data']
+	if prediction['certainty'] > 0.7:
+		if prediction['tag'] == 'cancel':
+			exit()
+		else:
+			return prediction['tag']
+
 async def request(uri, data):
 	async with websockets.connect(uri) as websocket:
 		await websocket.send(data)
