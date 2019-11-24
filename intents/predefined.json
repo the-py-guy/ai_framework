@@ -25,7 +25,7 @@
 	},
 	{
 		"tag": "cancel",
-		"patterns": ["never mind.", "forget it.", "forget about it."],
+		"patterns": ["never mind", "forget it", "forget about it","nevermind","cancel"],
 		"responses": ["ok"],
 		"context_set": ""
 	},

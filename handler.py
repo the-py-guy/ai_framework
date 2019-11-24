@@ -1,4 +1,5 @@
 import random, os, base64, json
+from action.communication import interact
 
 action_files_path = 'action/'
 
@@ -12,9 +13,9 @@ def response_handler(response):
 		if action is not None:
 			handle_action(response, action)
 		else:
-			print(random.choice(response['prediction_data']['responses']))
+			interact.say(random.choice(response['prediction_data']['responses']))
 	else:
-		print("im not sure what you mean by "+response['trigger_phrase'])
+		interact.say("im not sure what you mean by "+response['trigger_phrase'])
 
 def handle_action(response, action):
 	action = action.split(':')[1]

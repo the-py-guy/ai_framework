@@ -1,9 +1,12 @@
 import argparse, json, random, string, base64, asyncio, websockets
+from communication import interact
 
 def confirm_deny_cancel(inp):
 	prediction = ai_predict(inp)['prediction_data']
 	if prediction['certainty'] > 0.7:
+		print (prediction['tag'])
 		if prediction['tag'] == 'cancel':
+			print('exit script bruh')
 			exit()
 		else:
 			return prediction['tag']
@@ -33,17 +36,17 @@ def create_action(trigger):
 
 def main(data):
 	while True:
-		print('what action should i create?')
-		action = input('you: ')
+		interact.say('what action should i create?')
+		action = interact.get_input()
 		confirm_deny_cancel(action)
-		print('create action '+action+'?')
-		inp = input('you: ')
+		interact.say('create action '+action+'?')
+		inp = interact.get_input()
 		if confirm_deny_cancel(inp) == 'confirm':
 			create_action(action)
-			print('ok. i created a new action for you.')
+			interact.say('ok. i created a new action for you.')
 			exit()
 		elif confirm_deny_cancel(inp) == 'deny':
-			print('sorry. lets try that again.')
+			interact.say('sorry. lets try that again.')
 		
 
 parser = argparse.ArgumentParser()

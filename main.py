@@ -1,7 +1,7 @@
 import handler, websockets, asyncio, json
 from multiprocessing import Process, Pipe
 from ai import ai_server
-
+from action.communication import interact
 async def request(uri, data):
 	async with websockets.connect(uri) as websocket:
 		await websocket.send(data)
@@ -18,7 +18,7 @@ server.start()
 
 if parent_conn.recv():
 	while True:
-		inp = input('you: ')
+		inp = interact.get_input()
 		response = ai_predict(inp)
 		handler.response_handler(response)
 

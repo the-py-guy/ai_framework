@@ -1,4 +1,5 @@
 import argparse, base64, json, asyncio, websockets
+from communication import interact
 
 def confirm_deny_cancel(inp):
 	prediction = ai_predict(inp)['prediction_data']
@@ -19,7 +20,7 @@ def ai_predict(data):
 
 
 def main(data):
-	print('looks like you havent programmed me to do this yet. heres some data: '+str(data))
+	interact.say('looks like you havent programmed me to do this yet. heres some data: '+str(data))
 		
 
 parser = argparse.ArgumentParser()
