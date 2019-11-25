@@ -21,4 +21,4 @@ def handle_action(response, action):
 	action = action.split(':')[1]
 	wrapped = base64.b64encode(json.dumps(response).encode("utf-8"))
 	command = "python "+action_files_path+action+" --data '"+wrapped.decode('utf-8')+"'"
-	print(os.system(command))
+	os.system(command)

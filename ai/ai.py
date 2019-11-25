@@ -6,8 +6,8 @@ stemmer = LancasterStemmer()
 
 working_dir = os.path.dirname(os.path.abspath(__file__))+'/'
 
-model_save_name = 'test2.tflearn'
-pickle_save_name = 'data.pickle'
+model_save_name = 'ai.tflearn'
+pickle_save_name = 'ai.pickle'
 
 
 

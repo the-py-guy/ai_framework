@@ -4,9 +4,7 @@ from communication import interact
 def confirm_deny_cancel(inp):
 	prediction = ai_predict(inp)['prediction_data']
 	if prediction['certainty'] > 0.7:
-		print (prediction['tag'])
 		if prediction['tag'] == 'cancel':
-			print('exit script bruh')
 			exit()
 		else:
 			return prediction['tag']
@@ -36,10 +34,10 @@ def create_action(trigger):
 
 def main(data):
 	while True:
-		interact.say('what action should i create?')
+		interact.say('what phrase should trigger this action?')
 		action = interact.get_input()
 		confirm_deny_cancel(action)
-		interact.say('create action '+action+'?')
+		interact.say('are you sure?')
 		inp = interact.get_input()
 		if confirm_deny_cancel(inp) == 'confirm':
 			create_action(action)

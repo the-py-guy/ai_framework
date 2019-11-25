@@ -3,6 +3,9 @@ from multiprocessing import Process, Pipe
 from ai import ai
 working_dir = os.path.dirname(os.path.abspath(__file__))+'/'
 
+def srv_says(data):
+	print('[SERVER]: '+data)
+
 def payload_constructor(inp,prediction):
 	json_data = {}
 	json_data['trigger_phrase'] = inp
@@ -52,32 +55,32 @@ def server():
 
 def main(parent_process):
 	try:
-		print('checking for code_signature.txt')
+		srv_says('checking for code_signature.txt')
 		compare_code_signature()
 	except:
-		print('code_signature.txt doesnt exist')
-		print('creating code_signature.txt')
+		srv_says('code_signature.txt doesnt exist')
+		srv_says('creating code_signature.txt')
 		
-		print('training ai for the first time')
+		srv_says('training ai for the first time')
 		ai.train_ai()
 		set_code_signature()
-		print('done training ai for the first time')
+		srv_says('done training ai for the first time')
 
 	if compare_code_signature():
-		print('code signatures are the same ai will start normally')
+		srv_says('code signatures are the same ai will start normally')
 		ai.normal_start()
-		print('ai started normally')
+		srv_says('ai started normally')
 	else:
-		print('code signature didnt match')
-		print('updating code signature')
+		srv_says('code signature didnt match')
+		srv_says('updating code signature')
 		set_code_signature()
-		print('updated code signature')
-		print('training ai')
+		srv_says('updated code signature')
+		srv_says('training ai')
 		ai.train_ai()
-		print('trained ai')
-		print('starting ai normally')
+		srv_says('trained ai')
+		srv_says('starting ai normally')
 		ai.normal_start()
-	print('starting server')
+	srv_says('starting server')
 	parent_process.send(True)
 	parent_process.close()
 	server()
